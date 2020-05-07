@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">beauty</string>
+    <string name="test">测试</string>
+
+    <!--main_activity-->
+    <string name="add_cloth">添加新衣服</string>
+    <string name="add_new_schedule">添加新预定记录</string>
+    <string name="query_schedule">根据编号查询预定记录</string>
+
+    <!--query_schedule_activity-->
+    <string name="input_cloth_id">请输入衣服编号...</string>
+    <string name="query">查询</string>
+
+    <!--cloth_schedule_activity-->
+
+    <!--add_cloth_activity-->
+    <string name="native_picture">本地相册</string>
+    <string name="take_photo">拍照</string>
+    <string name="submit">提交</string>
+
+    <!--show_schedule_activity-->
+    <string name="delete">删除</string>
+</resources>

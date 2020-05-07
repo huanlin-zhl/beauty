@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    android:id="@+id/showSchedule"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/cloth_id"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="0.1"
+
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+
+        android:background="@color/input"
+        android:textSize="20sp"/>
+
+    <ImageView
+        android:id="@+id/cloth_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="0.2"/>
+
+    <ListView
+        android:id="@+id/schedule_list"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="0.2"/>
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+
+        android:textSize="20sp"
+        android:text="@string/delete"
+        android:background="@color/delete"
+        android:textColor="#FFFFFF"
+        />
+
+</LinearLayout>
