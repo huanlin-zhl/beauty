@@ -6,8 +6,7 @@ package com.example.beauty.common.constant;
  */
 public class URLs {
 
-    private static final String BASE_URL = "http://182.92.58.168:10712";
-//    private static final String BASE_URL = "http://192.168.0.104:10712";
+    private static final String BASE_URL = "http://192.168.0.104:8080";
 
     public static final String ADD_NEW_CLOTH = BASE_URL + "/cloth/add";
 
