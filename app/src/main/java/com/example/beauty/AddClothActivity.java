@@ -2,6 +2,8 @@ package com.example.beauty;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -55,6 +57,7 @@ public class AddClothActivity extends BaseActivity implements OnClickListener {
 
     private static String imagePath;
     private static Uri imageUri;
+    private static AlertDialog alertDialog;
 
     private String[] permissions = {
             Manifest.permission.CAMERA,
@@ -81,6 +84,9 @@ public class AddClothActivity extends BaseActivity implements OnClickListener {
         nativePicture.setOnClickListener(this);
         takePhoto.setOnClickListener(this);
         submit.setOnClickListener(this);
+
+        //初始化上传提示框
+        alertDialog = new AlertDialog.Builder(AddClothActivity.this).create();
 
         //申请权限
         PermissionUtil.requestPermission(AddClothActivity.this, permissions);
@@ -173,6 +179,10 @@ public class AddClothActivity extends BaseActivity implements OnClickListener {
         }else if (imagePath == null || !(new File(imagePath).exists())){
             ToastUtils.showToast(AddClothActivity.this, "请添加图片");
         }else {
+            //弹出提示，不要点击
+            alertDialog.setMessage("亲~，图片上传中，请不要点击屏幕");
+            alertDialog.show();
+
             //获取图片文件，并构建图片的requestBody对象
             File clothImageFile = new File(imagePath);
             RequestBody imageRequestBody = RequestBody.Companion.create(clothImageFile, MediaType.parse("image/jpg"));
@@ -204,7 +214,7 @@ public class AddClothActivity extends BaseActivity implements OnClickListener {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            ToastUtils.showToast(AddClothActivity.this, beautyResult.getMsg());
+                            alertDialog.setMessage(beautyResult.getMsg() + "   点击返回");
                         }
                     });
                 }
